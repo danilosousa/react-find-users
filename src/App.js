@@ -12,6 +12,16 @@ class App extends Component {
     }
   }
 
+  onsearchChange = (event) => {
+    const searchField = event.target.value.toLocaleLowerCase()
+     console.log('this.state.users =>',this.state.users);
+    
+
+     this.setState(() => {
+       return { searchField }
+     })
+   }
+
   componentDidMount(){
     let baseUrl = 'https://jsonplaceholder.typicode.com/users';
 
@@ -45,15 +55,7 @@ class App extends Component {
             className='search-box-input'
             type="search"
             placeholder='Buscar...'
-            onChange={(event) => {
-             const searchField = event.target.value.toLocaleLowerCase()
-              console.log('this.state.users =>',this.state.users);
-             
-
-              this.setState(() => {
-                return { searchField }
-              })
-            }}
+            onChange={this.onsearchChange}
           />
         </div>
         {filteredUsers.map((users) => {
