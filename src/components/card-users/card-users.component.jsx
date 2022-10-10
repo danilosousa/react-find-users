@@ -1,12 +1,19 @@
 
+
 const Card = ({ user }) => {
-  const { name, email } = user;
+  const { id, name, email, company,address } = user;
 
   return (
-    <div className='card-container'>
-      <h2>{name}</h2>
-      <p>{email}</p>
-    </div>
+  <tbody>
+    <tr>
+        <td>{id}</td>
+        <td>{name}e</td>
+        <td>{email}</td>
+        <td>{company.name}</td>
+        <td>{address.street}</td>
+        <td>{address.city}</td>
+    </tr>
+  </tbody>
   );
 };
 

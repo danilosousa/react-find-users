@@ -37,9 +37,11 @@ const App = () => {
       <SearchBox
         className='users-search-box'
         onChangeHandler={onSearchChange}
-        placeholder='Buscar Pessoas'
+        placeholder='Buscar por Usuários'
       />
       <CardList users={filteredUsers} />
+      
+      
     </div>
   );
 };
